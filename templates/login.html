@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Attendance Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top left,#00f5ff,#0b0f1a 40%),
+    radial-gradient(circle at bottom right,#7b2ff7,#0b0f1a 40%);
+    overflow:hidden;
+}
+
+/* Animated particles */
+
+body::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+    radial-gradient(#00f5ff 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:.15;
+    animation:move 20s linear infinite;
+}
+
+@keyframes move{
+    from{transform:translate(0,0);}
+    to{transform:translate(-100px,-100px);}
+}
+
+/* Glass Card */
+
+.login-box{
+    position:relative;
+    width:420px;
+    padding:40px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    box-shadow:
+    0 0 30px rgba(0,255,255,.2),
+    0 0 60px rgba(123,47,247,.2);
+    text-align:center;
+}
+
+.login-box h1{
+    color:white;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#8fa6c9;
+    margin-bottom:30px;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    font-size:15px;
+}
+
+.input-box input::placeholder{
+    color:#b0b7c3;
+}
+
+.btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+    90deg,
+    #00f5ff,
+    #7b2ff7
+    );
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px #00f5ff;
+}
+
+.ai-badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:20px;
+    background:rgba(0,255,255,.15);
+    color:#00f5ff;
+    margin-bottom:20px;
+    font-size:13px;
+}
+
+.footer{
+    margin-top:20px;
+    color:#7f8ea3;
+    font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="ai-badge">
+        🤖 AI Face Recognition System
+    </div>
+
+    <h1>Admin Login</h1>
+
+    <p class="subtitle">
+        Secure Attendance Management Portal
+    </p>
+
+    <form method="POST">
+
+        <div class="input-box">
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required>
+        </div>
+
+        <div class="input-box">
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required>
+        </div>
+
+        <button class="btn" type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <div class="footer">
+        AI Attendance System v2.0
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(
+        -45deg,
+        #050816,
+        #0b1023,
+        #091c3d,
+        #120f2d
+    );
+
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+
+    color: white;
+}
+@keyframes gradientBG {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 56px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar-link:hover {
+    background: #e9ecef;
+}
+
+/* MAIN CONTENT SHIFT */
+.content {
+    margin-left: 220px;
+}
+
+/* CARDS */
+.card-hover {
+    transition: 0.3s;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+}
+
+/* HOME PAGE */
+.home-bg {
+    background: linear-gradient(135deg, #0d6efd, #6f42c1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container {
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+}
+.camera-wrapper{
+    width:100%;
+    height:550px;
+    background:#000;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.glass-panel{
+    background:#0b1220;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:20px;
+}
+
+#attendanceList .glass-card{
+    background:#10192c;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    margin-bottom:10px;
+}
+
+/* BUTTON ANIMATION */
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}

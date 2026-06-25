@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="text-center mb-4">
+
+        <h1 class="display-4 text-info">
+            AI Face Recognition Attendance System
+        </h1>
+
+        <p class="text-secondary">
+            Real Time Student Detection
+        </p>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card bg-dark text-white shadow-lg">
+
+                <div class="card-header d-flex justify-content-between">
+
+                    <h4>🎥 Live Camera</h4>
+
+                    <span class="badge bg-success">
+                        LIVE
+                    </span>
+
+                </div>
+
+                <div class="card-body">
+
+                    <img
+                        src="{{ url_for('video') }}"
+                        class="img-fluid rounded w-100">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-4 justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card bg-dark text-white">
+
+                <div class="card-header">
+
+                    <h4>
+                        👤 Latest Detection
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h2 id="latestName"
+                        class="text-center text-success">
+                        Waiting...
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/login"class="btn btn-primary btn-lg">
+        Admin Login
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function loadLatest(){
+
+    fetch("/api/attendance")
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        if(data.records.length > 0){
+
+            document.getElementById(
+                "latestName"
+            ).innerHTML =
+            data.records[0].name;
+
+        }
+
+    });
+
+}
+
+setInterval(loadLatest,1000);
+
+loadLatest();
+
+</script>
+
+{% endblock %}

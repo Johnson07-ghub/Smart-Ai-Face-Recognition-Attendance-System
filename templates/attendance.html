@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">📋 Attendance Records</h2>
+
+<div class="card bg-dark text-white shadow">
+
+    <div class="card-body">
+
+        <table class="table table-dark table-hover">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for record in records %}
+
+            <tr>
+
+                <td>
+
+                    {% if record[0] == "Unknown Person" %}
+                    <span class="badge bg-danger">
+                        {{ record[0] }}
+                    </span>
+                    {% else %}
+                    <span class="badge bg-success">
+                        {{ record[0] }}
+                    </span>
+                    {% endif %}
+
+                </td>
+
+                <td>{{ record[1] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
