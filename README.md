@@ -144,7 +144,7 @@ Password: -------
 
  Clone Repository
 
-git clone https://github.com/your-username/Smart-AI-Face-Recognition-Attendance-System.git
+git clone https://github.com/Johnson07-ghub/Smart-AI-Face-Recognition-Attendance-System.git
 
 Create Virtual Environment
 
